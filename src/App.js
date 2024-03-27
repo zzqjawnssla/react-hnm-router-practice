@@ -1,9 +1,11 @@
+import {useEffect, useState} from "react";
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {Route, Routes} from "react-router-dom";
 import ProductAll from "./Pages/ProductAll";
 import Login from "./Pages/Login";
-import ProductDetail from "./Pages/ProductDetail";
 import NavigationBar from "./Componets/NavigationBar";
+import PrivateRoute from "./route/PrivateRoute";
 
 //1. 전체상품페이지, 로그인, 상품상세 페이지
 //2. 전체 상품페이지에는 전체 상품을 볼수 있다
@@ -14,16 +16,21 @@ import NavigationBar from "./Componets/NavigationBar";
 //7. 로그아웃이되면 상품 디테일페이지를 볼수없다. 다시 로그인 페이지가 보인다
 //8. 로그인을 하면 로그아웃이 보이고 로그아웃을 하면 로그인이 보인다
 //9. 상품을 검색 할 수있다.
-
+//json server 시작 명령어 : json-server --watch db.json --port 5000
 
 function App() {
+    const [authenticated, setAuthenticated] = useState(false) //true면 로그인 false면 로그아웃
+    useEffect(() => {
+        console.log('authenticated', authenticated)
+    }, [authenticated]);
+
     return (
         <div>
             <NavigationBar/>
             <Routes>
                 <Route path="/" element={<ProductAll/>}/>
-                <Route path="/login" element={<Login/>}/>
-                <Route path="/product/:id" element={<ProductDetail/>}/>
+                <Route path="/login" element={<Login setAuthenticated={setAuthenticated}/>}/>
+                <Route path="/product/:id" element={<PrivateRoute authenticated={authenticated}/>}/>
             </Routes>
 
 
