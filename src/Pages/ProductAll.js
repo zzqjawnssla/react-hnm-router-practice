@@ -1,14 +1,18 @@
 import React, {useEffect, useState} from 'react'
 import ProductCard from "../Componets/ProductCard";
 import {Col, Container, Row} from "react-bootstrap";
+import { useSearchParams } from "react-router-dom";
+
 
 const PruductAll = () => {
     const [productList, setProductList] = useState()
+    const [query, setQuery] = useSearchParams();
 
 
     useEffect(() => {
         const getProducts = async () => {
-            let url = 'http://localhost:5000/products'
+             let keyword = query.get("q") || "";
+            let url = `http://localhost:5000/products?q=${keyword}`;
             let response = await fetch(url)
             let data = await response.json()
             // console.log('data', data)
@@ -18,7 +22,7 @@ const PruductAll = () => {
         }
 
         getProducts()
-    }, []);
+    }, [query]);
 
     console.log(productList)
 

@@ -4,7 +4,7 @@ import {faUser} from "@fortawesome/free-regular-svg-icons";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
 import {useNavigate} from "react-router-dom";
 
-const NavigationBar = () => {
+const NavigationBar = ({authenticated ,setAuthenticated}) => {
 
     const menuList = [
         "여성", "Divided", "남성", "신생아/유아", "아동", "H&M Home", "Sale", "지속가능성",
@@ -29,12 +29,17 @@ const NavigationBar = () => {
 
     }
 
+     const logout = () => {
+        setAuthenticated(false);
+        navigate('/login')
+    }
+
     return (
         <>
             <div>
-                <div className="login-button" onClick={goToLogin}>
-                    <FontAwesomeIcon icon={faUser}/>
-                    <div>로그인</div>
+                <div className="login-button" onClick={authenticated ? logout : goToLogin}>
+                    <FontAwesomeIcon icon={faUser} style={{marginTop:'4px', marginRight:'5px'}}/>
+                    <div>{authenticated ? "로그아웃" : "로그인"}</div>
                 </div>
             </div>
             <div className="nav-section" onClick={goToHome}>

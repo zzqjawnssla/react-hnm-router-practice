@@ -26,7 +26,7 @@ function App() {
 
     return (
         <div>
-            <NavigationBar/>
+            <NavigationBar authenticated={authenticated} setAuthenticated={setAuthenticated}/>
             <Routes>
                 <Route path="/" element={<ProductAll/>}/>
                 <Route path="/login" element={<Login setAuthenticated={setAuthenticated}/>}/>

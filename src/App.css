@@ -10,6 +10,8 @@
 .nav-section {
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100%;
 
 
 }
@@ -83,3 +85,61 @@ input:focus::placeholder {
     display: flex;
     justify-content: flex-start;
 }
+
+/* PC 환경 */
+@media (min-width: 769px) {
+  .nav-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .menu-area {
+    position: relative;
+    width: auto;
+    height: auto;
+    overflow: visible;
+  }
+   .sidebar-toggle {
+    display: none;
+  }
+}
+
+/* 모바일 환경 */
+/*@media (max-width: 412px) {*/
+/*  .nav-section {*/
+/*   display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    height: 100%;*/
+/*  }*/
+/*  .menu-area {*/
+/*    position: fixed;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 250px;*/
+/*    height: 100%;*/
+/*    overflow: auto;*/
+/*  }*/
+/*  .menu-list {*/
+/*    display: block;*/
+/*    position: fixed;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 250px;*/
+/*    height: 100%;*/
+/*    overflow: auto;*/
+/*    background-color: #f2f2f2;*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*    list-style-type: none;*/
+/*  }*/
+/*  .menu-list li {*/
+/*    padding: 10px;*/
+/*    border-bottom: 1px solid #ccc;*/
+/*  }*/
+/*    .sidebar-toggle {*/
+/*    display: block;*/
+/*  }*/
+
+/*}*/
