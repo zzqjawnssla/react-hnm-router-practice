@@ -19,6 +19,16 @@ const NavigationBar = () => {
         navigate('/')
     }
 
+    const search = (event) => {
+        if (event.key === 'Enter') {
+            console.log('search')
+            let keyword=event.target.value
+            navigate(`/?q=${keyword}`)
+
+        }
+
+    }
+
     return (
         <>
             <div>
@@ -27,12 +37,10 @@ const NavigationBar = () => {
                     <div>로그인</div>
                 </div>
             </div>
-            <div className="nav-section" >
+            <div className="nav-section" onClick={goToHome}>
                 <img width={100}
                      src="https://cdn.icon-icons.com/icons2/2845/PNG/512/hm_logo_icon_181277.png"
-                     alt="H&M Logo"
-                     className="logo"
-                onClick={goToHome}/>
+                     alt="H&M Logo"/>
             </div>
             <div className="menu-area">
                 <ul className="menu-list">
@@ -41,11 +49,16 @@ const NavigationBar = () => {
 
                 <div className="search-bar">
                     <FontAwesomeIcon icon={faSearch}/>
-                    <input type="text" style={{
-                        marginLeft: '5px',
-                        borderColor: 'grey black black grey',
-                        borderStyle: 'solid'
-                    }}/>
+                    <input type="text"
+                           placeholder="Search Any Product.."
+                           style={{
+                               marginLeft: '10px',
+                               // caretColor: 'transparent',
+                               borderColor: 'transparent',
+                               outline: 'none',
+                           }}
+                           onKeyPress={event => search(event)}
+                    />
                 </div>
             </div>
         </>

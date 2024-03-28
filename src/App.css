@@ -1,7 +1,9 @@
 .login-button {
     display: flex;
     justify-content: flex-end;
-    margin: 20px;
+    margin-right : 50px;
+    margin-top: 20px;
+    /*margin: 20px;*/
     cursor: pointer;
 }
 
@@ -11,8 +13,9 @@
 
 
 }
+
 .logo {
-   cursor: pointer;
+    cursor: pointer;
 }
 
 .menu-list {
@@ -33,7 +36,15 @@
 }
 
 .search-bar {
-    margin-left: auto;
+    margin-right: 50px;
+    border: 1px solid ;
+    border-color:  transparent transparent black transparent;
+    /*border-bottom-color: black;*/
+    height: 35px;
+}
+
+input:focus::placeholder {
+    color: transparent;
 }
 
 .custom-card {
@@ -50,17 +61,23 @@
     border: 1px outset black;
     padding: 3px;
     margin: 5px;
-    margin-left: 0;     text-align: center;
+    margin-left: 0;
+    text-align: center;
     width: fit-content;
-    background-color: #f2f2f2;  border-radius: 5px; }
+    background-color: #f2f2f2;
+    border-radius: 5px;
+}
 
 .new-box {
     border: 1px outset black;
     padding: 3px;
-    margin: 5px ;
-    margin-left: 0;     text-align: center;
+    margin: 5px;
+    margin-left: 0;
+    text-align: center;
     width: fit-content;
-    background-color: #e0f7fa;  border-radius: 5px; }
+    background-color: #e0f7fa;
+    border-radius: 5px;
+}
 
 .icon-container {
     display: flex;
