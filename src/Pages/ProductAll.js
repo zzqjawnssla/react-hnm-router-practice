@@ -12,7 +12,7 @@ const PruductAll = () => {
     useEffect(() => {
         const getProducts = async () => {
              let keyword = query.get("q") || "";
-            let url = `http://localhost:5000/products?q=${keyword}`;
+            let url = `https://my-json-server.typicode.com/zzqjawnssla/react-hnm-router-practice/products?q=${keyword}`;
             let response = await fetch(url)
             let data = await response.json()
             // console.log('data', data)
