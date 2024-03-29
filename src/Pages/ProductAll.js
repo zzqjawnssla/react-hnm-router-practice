@@ -8,6 +8,7 @@ const PruductAll = () => {
     const [productList, setProductList] = useState()
     const [query, setQuery] = useSearchParams();
 
+    console.log(setQuery)
 
     useEffect(() => {
         const getProducts = async () => {
