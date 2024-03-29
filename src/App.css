@@ -168,3 +168,8 @@ input:focus::placeholder {
 .sidebar ul li {
     margin-bottom: 10px;
 }
+@media (max-width: 768px) {
+    .product-detail-img {
+        width: 100%;
+    }
+}

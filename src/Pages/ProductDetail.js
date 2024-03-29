@@ -22,9 +22,9 @@ const ProductDetail = () => {
     return (
         <Container>
             <Row>
-                <Col>
-                    <img alt='detailImg' src={product?.img}/>
-                </Col>
+             <Col>
+    <img className="product-detail-img" alt='detailImg' src={product?.img}/>
+</Col>
                 <Col>
                     <div className="icon-container">
                         <div>
