@@ -20,7 +20,7 @@ const ProductDetail = () => {
 
     }, [id]);
     return (
-        <Container>
+        <Container className="detail-container">
             <Row>
              <Col>
     <img className="product-detail-img" alt='detailImg' src={product?.img}/>
