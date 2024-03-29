@@ -19,21 +19,21 @@ import PrivateRoute from "./route/PrivateRoute";
 //json server 시작 명령어 : json-server --watch db.json --port 5000
 
 function App() {
-    const [authenticated, setAuthenticated] = useState(false) //true면 로그인 false면 로그아웃
+    const [authenticated, setAuthenticated] = useState(false)
     useEffect(() => {
         console.log('authenticated', authenticated)
     }, [authenticated]);
 
+
     return (
         <div>
+
             <NavigationBar authenticated={authenticated} setAuthenticated={setAuthenticated}/>
             <Routes>
                 <Route path="/" element={<ProductAll/>}/>
                 <Route path="/login" element={<Login setAuthenticated={setAuthenticated}/>}/>
                 <Route path="/product/:id" element={<PrivateRoute authenticated={authenticated}/>}/>
             </Routes>
-
-
         </div>
     );
 }
