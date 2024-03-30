@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {useParams} from "react-router-dom";
-import {Col, Container, DropdownButton, Row, Dropdown} from "react-bootstrap";
+import {Col, Container, DropdownButton, Row, Dropdown, Button} from "react-bootstrap";
 
 const ProductDetail = () => {
     const {id} = useParams()
@@ -21,11 +21,12 @@ const ProductDetail = () => {
     }, [id]);
     return (
         <Container className="detail-container">
-            <Row>
-             <Col>
-    <img className="product-detail-img" alt='detailImg' src={product?.img}/>
-</Col>
-                <Col>
+            <Row className="my-row">
+                <Col xs={12} md={6}>
+                    <img style={{width: "100%", height: "70%"}} className="product-detail-img" alt='detailImg'
+                         src={product?.img}/>
+                </Col>
+                <Col className="my-col" xs={12} md={6}>
                     <div className="icon-container">
                         <div>
                             {product?.choice === true &&
@@ -42,42 +43,44 @@ const ProductDetail = () => {
                     <div>₩{parseInt(product?.price).toLocaleString('ko-KR')}</div>
                     <div>{product?.description}</div>
 
-                    <div>
-                        <DropdownButton
-                            id="Size"
-                            variant="secondary"
-                            title={selectedSize || "Size-Select"}
-                            className="mt-2"
-                            data-bs-theme="dark"
-                        >
-                            <Dropdown.Item
-                                href="#/action-4"
-                                onClick={() => setSelectedSize('Size-Select')}
+                    <div className="detail-button">
+                        <div>
+                            <DropdownButton
+                                id="Size"
+                                variant="secondary"
+                                title={selectedSize || "Size-Select"}
+                                className="mt-2"
+                                data-bs-theme="dark"
                             >
-                                Size-Select
-                            </Dropdown.Item>
-                            {product?.size.map((size, index) => (
                                 <Dropdown.Item
-                                    href={`#/action-${index}`}
-                                    key={index}
-                                    onClick={() => setSelectedSize(size)}
+                                    href="#/action-4"
+                                    onClick={() => setSelectedSize('Size-Select')}
                                 >
-                                    {size}
+                                    Size-Select
                                 </Dropdown.Item>
-                            ))}
-                            <Dropdown.Divider/>
-                            <Dropdown.Item
-                                href="#/action-4"
-                                onClick={() => setSelectedSize('*Custom Size')}
-                            >
-                                *Custom Size
-                            </Dropdown.Item>
-                        </DropdownButton>
-                    </div>
-                    <div>
-                        <button style={{marginRight: "3px"}} className="btn btn-dark mt-2">바로 구매하기</button>
-                        <button style={{marginRight: "3px"}} className="btn btn-outline-dark mt-2">장바구니</button>
-                        <button className="btn btn-outline-dark mt-2">찜</button>
+                                {product?.size.map((size, index) => (
+                                    <Dropdown.Item
+                                        href={`#/action-${index}`}
+                                        key={index}
+                                        onClick={() => setSelectedSize(size)}
+                                    >
+                                        {size}
+                                    </Dropdown.Item>
+                                ))}
+                                <Dropdown.Divider/>
+                                <Dropdown.Item
+                                    href="#/action-4"
+                                    onClick={() => setSelectedSize('*Custom Size')}
+                                >
+                                    *Custom Size
+                                </Dropdown.Item>
+                            </DropdownButton>
+                        </div>
+                        <div className="detail-button-buy" style={{marginTop:"100px"}}>
+                            <Button style={{marginRight: "3px"}} className="btn btn-dark mt-2">바로 구매하기</Button>
+                            <button style={{marginRight: "3px"}} className="btn btn-outline-dark mt-2">장바구니</button>
+                            <button style={{color: "red"}} className="btn btn-outline-dark mt-2">♥</button>
+                        </div>
                     </div>
                 </Col>
             </Row>

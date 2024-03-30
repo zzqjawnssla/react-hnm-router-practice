@@ -56,7 +56,7 @@ const NavigationBar = ({authenticated ,setAuthenticated}) => {
                 </div>
             </div>
             <div className="nav-section" onClick={goToHome}>
-                <img width={150}
+                <img width={100}
                      src="https://cdn.icon-icons.com/icons2/2845/PNG/512/hm_logo_icon_181277.png"
                      alt="H&M Logo"/>
 
