@@ -5,7 +5,7 @@ import {faBars, faSearch} from "@fortawesome/free-solid-svg-icons";
 import {useNavigate} from "react-router-dom";
 import SideMenu from "./SideMenu";
 
-const NavigationBar = ({authenticated ,setAuthenticated}) => {
+const NavigationBar = ({authenticated, setAuthenticated}) => {
 
     const menuList = [
         "여성", "Divided", "남성", "신생아/유아", "아동", "H&M Home", "Sale", "지속가능성",
@@ -23,19 +23,19 @@ const NavigationBar = ({authenticated ,setAuthenticated}) => {
     const search = (event) => {
         if (event.key === 'Enter') {
             console.log('search')
-            let keyword=event.target.value
+            let keyword = event.target.value
             navigate(`/?q=${keyword}`)
 
         }
 
     }
 
-     const logout = () => {
+    const logout = () => {
         setAuthenticated(false);
         navigate('/login')
     }
 
-            const [isOpen, setIsOpen] = useState(false) // Change this line
+    const [isOpen, setIsOpen] = useState(false) // Change this line
     const toggleSidebar = () => {
         setIsOpen(!isOpen)
     }
@@ -45,7 +45,7 @@ const NavigationBar = ({authenticated ,setAuthenticated}) => {
 
             <div style={{display: 'flex', justifyContent: 'space-between'}}>
                 <div className="sidebar-button">
-                    <button className="mobile-button" onClick={toggleSidebar}>
+                    <button className="mobile-button" onClick={toggleSidebar} style={{border:"none", backgroundColor:"transparent"}}>
                         <FontAwesomeIcon style={{fontSize: '1.5em'}} icon={faBars}/>
                     </button>
                     <SideMenu isOpen={isOpen} toggleSidebar={toggleSidebar} menuList={menuList} goToHome={goToHome}/>

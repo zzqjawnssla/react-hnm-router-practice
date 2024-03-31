@@ -21,7 +21,8 @@ const Login = ({setAuthenticated}) => {
 
             <Form onSubmit={(e) => loginUser(e)}>
                 <h3 style={{marginLeft: '40px'}}><strong>로그인</strong></h3>
-                <p style={{
+                <p className="mobile-text"
+                    style={{
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
@@ -78,7 +79,7 @@ const Login = ({setAuthenticated}) => {
                     <Form.Control style={{border: '1px solid lightgrey', borderRadius: '0', fontSize: '20px'}}
                                   type="password"/>
                 </Form.Group>
-                <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                <div className="mobile-text" style={{display: 'flex', justifyContent: 'space-between'}}>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
                         <Form.Check type="checkbox" label="로그인 상태 유지"/>
                     </Form.Group>
@@ -117,13 +118,13 @@ const Login = ({setAuthenticated}) => {
                 }}>
                     회원 가입하기
                 </Button>
-                <p2 style={{
+                <p style={{
                     marginTop: '20px',
                     display: 'flex',
                     justifyContent: 'center',
                     textDecoration: 'underline'
                 }}>멤버쉽 정보
-                </p2>
+                </p>
             </Form>
         </Container>
 
