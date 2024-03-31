@@ -1,3 +1,6 @@
+
+
+
 .login-button {
     display: flex;
     justify-content: space-between;
@@ -6,6 +9,9 @@
     margin-top: 20px;
     /*margin: 20px;*/
     cursor: pointer;
+        position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
 .sidebar-button {
@@ -15,6 +21,9 @@
     margin-top: 20px;
     /*margin-left: auto;*/
     cursor: pointer;
+        position: absolute;
+    top: 10px;
+    left: 10px;
 
 }
 
@@ -33,6 +42,7 @@
     width: 150px;
     cursor: pointer;
     margin: auto;
+    margin-top: 50px;
 }
 
 .logo {
