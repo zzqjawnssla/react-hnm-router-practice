@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, Container, Form} from "react-bootstrap";
+import {Button, Container, Form, Row} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -17,7 +17,9 @@ const Login = ({setAuthenticated}) => {
     }
     return (
 
-        <Container className="login-container" style={{width:"600px", padding:"40px"}}>
+        <Container style={{display:"flex",justifyContent:"center", marginTop:"20px"}}>
+            <Row className="login-pc">
+
 
             <Form onSubmit={(e) => loginUser(e)}>
                 <h3 style={{marginLeft: '40px'}}><strong>로그인</strong></h3>
@@ -126,6 +128,8 @@ const Login = ({setAuthenticated}) => {
                 }}>멤버쉽 정보
                 </p>
             </Form>
+
+                </Row>
         </Container>
 
     )
