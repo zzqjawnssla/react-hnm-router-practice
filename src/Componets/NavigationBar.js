@@ -43,10 +43,9 @@ const NavigationBar = ({authenticated, setAuthenticated}) => {
     return (
         <>
 
-            <div style={{display: 'flex', justifyContent: 'space-between', marginLeft: 'auto', marginRight: 'auto'}}>
+            <div style={{display: 'flex', justifyContent: 'space-between'}}>
                 <div className="sidebar-button">
-                    <button className="mobile-button" onClick={toggleSidebar}
-                            style={{border: "none", backgroundColor: "transparent"}}>
+                    <button className="mobile-button" onClick={toggleSidebar} style={{border:"none", backgroundColor:"transparent"}}>
                         <FontAwesomeIcon style={{fontSize: '1.5em'}} icon={faBars}/>
                     </button>
                     <SideMenu isOpen={isOpen} toggleSidebar={toggleSidebar} menuList={menuList} goToHome={goToHome}/>
