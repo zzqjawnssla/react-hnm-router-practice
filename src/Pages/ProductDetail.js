@@ -21,12 +21,15 @@ const ProductDetail = () => {
     }, [id]);
     return (
         <Container className="detail-container">
-            <Row className="my-row">
-                <Col xs={12} md={6}>
-                    <img style={{width: "100%", height: "70%"}} className="product-detail-img" alt='detailImg'
-                         src={product?.img}/>
+            <Row className="my-row" style={{display:"flex",justifyContent:"space-between",alignContent:"center"}}>
+                <Col xs={12} md={7}>
+                    <img  className="product-detail-img" alt='detailImg'
+                         src={product?.img}
+                    />
                 </Col>
-                <Col className="my-col" xs={12} md={6}>
+                <Col xs={12} md={4}>
+
+
                     <div className="icon-container">
                         <div>
                             {product?.choice === true &&
@@ -43,7 +46,7 @@ const ProductDetail = () => {
                     <div>₩{parseInt(product?.price).toLocaleString('ko-KR')}</div>
                     <div>{product?.description}</div>
 
-                    <div className="detail-button">
+                    <div>
                         <div>
                             <DropdownButton
                                 id="Size"
@@ -76,7 +79,7 @@ const ProductDetail = () => {
                                 </Dropdown.Item>
                             </DropdownButton>
                         </div>
-                        <div className="detail-button-buy" style={{marginTop:"100px"}}>
+                        <div className="detail-button-buy" style={{marginTop: "100px"}}>
                             <Button style={{marginRight: "3px"}} className="btn btn-dark mt-2">바로 구매하기</Button>
                             <button style={{marginRight: "3px"}} className="btn btn-outline-dark mt-2">장바구니</button>
                             <button style={{color: "red"}} className="btn btn-outline-dark mt-2">♥</button>

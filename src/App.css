@@ -105,6 +105,7 @@ input:focus::placeholder {
 .icon-container {
     display: flex;
     justify-content: flex-start;
+
 }
 
 
@@ -158,6 +159,8 @@ input:focus::placeholder {
     justify-content: center;
     align-items: center;
 }
+
+
 
 @media (min-width: 501px) {
     .login-pc{
@@ -226,16 +229,16 @@ input:focus::placeholder {
 
     .my-row {
         margin: 0 !important;
+            display: flex;
+    align-items: center;
     }
 
-    .my-col {
 
-    }
 
     .product-detail-img {
         height: 100%;
         width: 100%;
-        padding: 0%;
+        padding: 10%;
     }
 
     .detail-button {
